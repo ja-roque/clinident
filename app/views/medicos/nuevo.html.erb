@@ -1,37 +1,37 @@
 <h1 class="text-center">Crear medico nuevo</h1>
 <%= form_for(@medico_nuevo, as: :medico, url: create_medico_path, html: {class: 'text-center'})  do |f| %>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :nombre %><br />
-    <%= f.text_field :nombre, autocomplete: "Nombre del medico" %>
+    <%= f.text_field :nombre, autocomplete: "Nombre del medico", class: 'form-control form-control-lg' %>
   </div>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :apellido %><br />
-    <%= f.text_field :apellido, autocomplete: "Apellido del medico" %>
+    <%= f.text_field :apellido, autocomplete: "Apellido del medico", class: 'form-control form-control-lg' %>
   </div>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email", class: 'form-control form-control-lg' %>
   </div>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :password %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "Contraseña" %>
+    <%= f.password_field :password, autocomplete: "Contraseña", class: 'form-control form-control-lg' %>
   </div>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "Password Contraseña" %>
+    <%= f.password_field :password_confirmation, autocomplete: "Password Contraseña", class: 'form-control form-control-lg' %>
   </div>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :especialidad %><br />
-    <%= f.text_field :especialidad, autocomplete: "Especialidad" %>
+    <%= f.text_field :especialidad, autocomplete: "Especialidad", class: 'form-control form-control-lg' %>
   </div>
 
   <div class="actions">

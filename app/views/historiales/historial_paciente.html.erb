@@ -1,4 +1,5 @@
 <h1 class="text-center">Historial Medico de <%= "#{@paciente.nombre} #{@paciente.apellido}" %></h1>
+<br>
 <%= render partial: 'tabla_historial_paciente', locals: {
     headers: ['ID Cita', 'Medico a cargo', 'Fecha','Observaciones', 'Servicio', 'Procedimiento', 'Asistencia']
 }%>

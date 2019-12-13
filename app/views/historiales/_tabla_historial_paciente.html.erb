@@ -1,3 +1,15 @@
+<%#= form_with(url: historial_paciente_csv_path, method: :post) do |f| %>
+  <%#= f.hidden_field :citas_id, value: @citas.pluck(:id) %>
+  <%#= f.submit :Descargar %>
+<%# end %>
+
+<%= form_with(url: historial_paciente_email_path, method: :post) do |f| %>
+  <%= f.hidden_field :citas_id, value: @citas.pluck(:id) %>
+  <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+    Enviar CSV <%= fa_icon 'envelope-open-text' %>
+  <% end %>
+<% end %>
+
 <table class="table table-bordered table-condensed table-striped table-hover">
   <thead class="thead-dark">
   <tr>
@@ -12,9 +24,9 @@
 </table>
 
 <script>
-    $(document).ready(function($) {
-        $(".table-row").click(function() {
-            window.document.location = $(this).data("href");
-        });
-    });
+    // $(document).ready(function($) {
+    //     $(".table-row").click(function() {
+    //         window.document.location = $(this).data("href");
+    //     });
+    // });
 </script>

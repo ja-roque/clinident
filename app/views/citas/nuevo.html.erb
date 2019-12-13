@@ -2,24 +2,24 @@
 
 <%= form_for(@cita_nueva, as: :cita, url: create_cita_path, html: {class: 'text-center'})  do |f| %>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :fecha %><br />
-    <%= f.datetime_select :fecha, autocomplete: "Fecha de la Cita" %>
+    <%= f.datetime_select :fecha, {autocomplete: "Fecha de la Cita"}, {}%>
   </div>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :paciente %><br />
-    <%= f.select :paciente_id, options_for_select(Paciente.all.map{|s| ["#{s.nombre} #{s.apellido}", s.id]} ) %>
+    <%= f.select :paciente_id, options_for_select(Paciente.all.map{|s| ["#{s.nombre} #{s.apellido}", s.id]}), {}, { class: 'form-control form-control-lg'} %>
   </div>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :medico %><br />
-    <%= f.select :user_id, User.select('*').uniq.map{|m| ["#{m.nombre} #{m.apellido}", m.id]} %>
+    <%= f.select :user_id, User.select('*').uniq.map{|m| ["#{m.nombre} #{m.apellido}", m.id]},{}, { class: 'form-control form-control-lg'} %>
   </div>
 
-  <div class="field">
+  <div class="field h3">
     <%= f.label :observaciones %><br />
-    <%= f.text_field :observaciones, autocomplete: "Observaciones" %>
+    <%= f.text_field :observaciones, {autocomplete: "Observaciones", class: 'form-control form-control-lg' } %>
   </div>
 
   <div class="actions">

@@ -2,29 +2,29 @@
 
 <%= form_for(@paciente_nuevo, as: :paciente, url: create_paciente_path, html: {class: 'text-center'})  do |f| %>
 
-<div class="field">
+<div class="field h3">
     <%= f.label :nombre %><br />
-    <%= f.text_field :nombre, autocomplete: "Nombre del Paciente" %>
+    <%= f.text_field :nombre, autocomplete: "Nombre del Paciente", class: 'form-control form-control-lg' %>
 </div>
 
-<div class="field">
+<div class="field h3">
     <%= f.label :apellido %><br />
-    <%= f.text_field :apellido, autocomplete: "Apellido del Paciente" %>
+    <%= f.text_field :apellido, autocomplete: "Apellido del Paciente", class: 'form-control form-control-lg' %>
 </div>
 
-<div class="field">
+<div class="field h3">
   <%= f.label :genero %><br />
-  <%= f.select :genero, options_for_select(['Masculino', 'Femenino'].map{|g| [g, g == 'Masculino']} ) %>
+  <%= f.select :genero, options_for_select(['Masculino', 'Femenino'].map{|g| [g, g == 'Masculino']} ), {} , {class: 'form-control form-control-lg'} %>
 </div>
 
-<div class="field">
+<div class="field h3">
     <%= f.label :fecha_nacimiento, 'Fecha de Nacimiento' %><br />
-    <%= f.date_field :fecha_nacimiento, autocomplete: "Fecha de Nacimiento" %>
+    <%= f.date_field :fecha_nacimiento, autocomplete: "Fecha de Nacimiento", class: 'form-control form-control-lg' %>
 </div>
 
-<div class="field">
+<div class="field h3">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg' %>
 </div>
 
 <div class="actions">

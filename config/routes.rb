@@ -32,6 +32,10 @@ Rails.application.routes.draw do
     get  '/historiales'     => 'historiales#index', as: :historiales
     get  '/historiales/pacientes' => 'historiales#por_paciente', as: :historiales_pacientes
     get  '/historiales/pacientes/:paciente_id' => 'historiales#historial_paciente', as: :historial_paciente
+
+    # Descargas
+    post  '/historiales/pacientes/:paciente_id/mail'=> 'historiales#send_csv_email', as: :historial_paciente_email
+    post  '/historiales/pacientes/:paciente_id/csv' => 'historiales#download_csv',   as: :historial_paciente_csv
   end
 
 end
