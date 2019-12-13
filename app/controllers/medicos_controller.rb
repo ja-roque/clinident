@@ -11,7 +11,7 @@ class MedicosController < ApplicationController
     @medico_nuevo = User.new(allowed_params)
     if @medico_nuevo.valid?
       @medico_nuevo.save
-      render :index
+      redirect_to medico_nuevo_path
     else
       render :index
     end

@@ -15,7 +15,7 @@ class PacientesController < ApplicationController
     paciente_nuevo = Paciente.new(allowed_params)
     if paciente_nuevo.valid?
       paciente_nuevo.save
-      render :index
+      redirect_to paciente_nuevo_path
     else
       render :index
     end

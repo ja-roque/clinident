@@ -13,7 +13,7 @@ class CitasController < ApplicationController
     @cita_nueva = Citum.new(allowed_params)
     if @cita_nueva.valid?
       @cita_nueva.save
-      render :index
+      redirect_to cita_nueva_path
     else
       render :index
     end
