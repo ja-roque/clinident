@@ -1,0 +1,40 @@
+<h1 class="text-center">Crear medico nuevo</h1>
+<%= form_for(@medico_nuevo, as: :medico, url: create_medico_path, html: {class: 'text-center'})  do |f| %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre, autocomplete: "Nombre del medico" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido, autocomplete: "Apellido del medico" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "Contraseña" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "Password Contraseña" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :especialidad %><br />
+    <%= f.text_field :especialidad, autocomplete: "Especialidad" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Crear", class: 'btn btn-success m-2' %>
+  </div>
+<% end %>

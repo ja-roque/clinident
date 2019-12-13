@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2019-11-29
+  user: one
+  paciente: one
+  observaciones: MyText
+  asistencia: false
+
+two:
+  fecha: 2019-11-29
+  user: two
+  paciente: two
+  observaciones: MyText
+  asistencia: false

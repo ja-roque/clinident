@@ -1,0 +1,20 @@
+<h1 class="text-center">Historiales</h1>
+<div class="row justify-content-md-center">
+  <%= link_to historiales_pacientes_path, class: 'btn btn-secondary row m-5 col-3' do %>
+    <h3>Por Paciente</h3> <br>
+    <%= fa_icon 'male', size: '3x' %>
+  <% end %>
+  <%= link_to historiales_path, class: 'btn btn-secondary row m-5 col-3' do %>
+    <h3>Por Procedimiento</h3> <br>
+    <%= fa_icon 'stethoscope', size: '3x' %>
+  <% end %>
+  <%= link_to historiales_path, class: 'btn btn-secondary row m-5 col-3' do %>
+    <h3>Por Rango de Fecha</h3> <br>
+    <%= fa_icon 'calendar-week', size: '3x' %>
+  <% end %>
+  <%= link_to historiales_path, class: 'btn btn-secondary row m-5 col-3' do %>
+    <h3>Por Medico</h3> <br>
+    <%= fa_icon 'user-md', size: '3x' %>
+  <% end %>
+</div>
+

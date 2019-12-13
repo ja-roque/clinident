@@ -1,0 +1,7 @@
+<tr>
+  <th class="text-center" scope="row"><%= cita.id %></th>
+  <td class="text-center"><%= "#{cita.paciente.nombre} #{cita.paciente.apellido} " %></td>
+  <td class="text-center"><%= cita.created_at %></td>
+  <td class="text-center"><%= cita.fecha %></td>
+  <td class="text-center"><%= cita.asistencia && fa_icon('calendar-check', size: '2x',style: 'color: Green') || button_tag("Marcar", type: 'button', onclick: "return marcarAsistencia(#{cita.id},'#{cita.paciente.nombre} #{cita.paciente.apellido}','#{cita.fecha}')", class: 'btn btn-default') %></td>
+</tr>

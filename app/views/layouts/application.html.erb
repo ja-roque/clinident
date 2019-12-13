@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clinident</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body style="background: linear-gradient(to bottom, #007cc1 30%, #fff 100px);
+      margin: 0;
+      min-height: 100vh;">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="card shadow" style="margin-left: 10%; margin-right: 10%; min-height: 80vh">
+      <div class="card-body">
+        <%= link_to :back do %>
+          Back <%=  fa_icon('undo-alt') %>
+        <% end %>
+        <%= link_to '/' do %>
+          <br>Home <%=  fa_icon('home') %>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete, style:'float: right;'  do %>
+          Salir <%=  fa_icon('sign-out-alt') %>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

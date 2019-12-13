@@ -1,0 +1,51 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th class="text-center" scope="col">ID</th>
+    <th class="text-center" scope="col">Nombre de Paciente</th>
+    <th class="text-center" scope="col">Fecha de Creada</th>
+    <th class="text-center" scope="col">Fecha de Cita</th>
+    <th class="text-center" scope="col">Asistio?</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render partial: 'fila_cita', collection: @citas, as: :cita %>
+  </tbody>
+</table>
+
+<script>
+  function marcarAsistencia(cita,nombre,fecha) {
+      Swal.fire({
+          title: `Confirmar asistencia para <br> ${nombre} <br> (fecha: ${fecha})`,
+          text: "Porfavor agrega el procedimiento a realizar o realizado.",
+          type: 'warning',
+          showCancelButton: true,
+          input: 'text',
+          inputAttributes: {
+              autocapitalize: 'off'
+          },
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          showLoaderOnConfirm: true,
+          confirmButtonText: 'MARCAR',
+          preConfirm: async (procedimiento) => {
+              return await fetch('<%= marcar_asistencia_path %>',
+                  {
+                  method: 'POST',
+                  headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({cita_id: cita, procedimiento: procedimiento})})
+                      .then(response => response.json())
+                      .then(data => Swal.insertQueueStep("Asistencia marcada."))
+                      .catch(() => {
+                          Swal.insertQueueStep({
+                              icon: 'error',
+                              title: 'Unable to get your public IP'
+                          })
+                      })
+          }
+      })
+  }
+</script>

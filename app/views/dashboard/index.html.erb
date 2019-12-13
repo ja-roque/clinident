@@ -1,0 +1,20 @@
+<h1 class="text-center">CliniDENT <%= fa_icon 'tooth' %> </h1>
+
+<div class="row justify-content-md-center">
+    <%= link_to citas_path, class: 'btn btn-primary row m-5 col-3' do %>
+      <h3>Citas</h3> <br>
+      <%= fa_icon 'calendar-day', size: '3x' %>
+    <% end %>
+    <%= link_to pacientes_path, class: 'btn btn-primary row m-5 col-3' do %>
+      <h3>Pacientes</h3> <br>
+      <%= fa_icon 'user-friends', size: '3x' %>
+    <% end %>
+    <%= link_to medicos_path, class: 'btn btn-primary row m-5 col-3' do %>
+      <h3>Medicos</h3> <br>
+      <%= fa_icon 'user-md', size: '3x' %>
+    <% end %>
+    <%= link_to historiales_path, class: 'btn btn-primary row m-5 col-3' do %>
+      <h3>Historiales</h3> <br>
+      <%= fa_icon 'book-medical', size: '3x' %>
+    <% end %>
+</div>

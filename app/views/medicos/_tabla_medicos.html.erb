@@ -1,0 +1,13 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Nombre de Medico</th>
+    <th scope="col">Especialidad</th>
+    <th scope="col">E-mail</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render partial: 'fila_medico', collection: @medicos, as: :medico %>
+  </tbody>
+</table>

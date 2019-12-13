@@ -1,0 +1,28 @@
+<h1 class="text-center">Crear cita nueva</h1>
+
+<%= form_for(@cita_nueva, as: :cita, url: create_cita_path, html: {class: 'text-center'})  do |f| %>
+
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.datetime_select :fecha, autocomplete: "Fecha de la Cita" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paciente %><br />
+    <%= f.select :paciente_id, options_for_select(Paciente.all.map{|s| ["#{s.nombre} #{s.apellido}", s.id]} ) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :medico %><br />
+    <%= f.select :user_id, User.select('*').uniq.map{|m| ["#{m.nombre} #{m.apellido}", m.id]} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :observaciones %><br />
+    <%= f.text_field :observaciones, autocomplete: "Observaciones" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Crear", class: 'btn btn-success m-2' %>
+  </div>
+<% end %>

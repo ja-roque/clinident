@@ -1,0 +1,19 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  url: postgres://pkdcisbrivslzw:2ea44dcb9a1f427e95d6b0bd6494076a6bec6f3a677c2fef2282b05da0a856c6@ec2-107-21-94-185.compute-1.amazonaws.com:5432/da2o6bq6bc5vgk
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: clinident_test
+
+production:
+  <<: *default
+  database: clinident_production
+  username: clinident
+  password: <%= ENV['CLINIDENT_DATABASE_PASSWORD'] %>

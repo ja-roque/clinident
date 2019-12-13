@@ -1,0 +1,33 @@
+<h1 class="text-center">Crear paciente nuevo</h1>
+
+<%= form_for(@paciente_nuevo, as: :paciente, url: create_paciente_path, html: {class: 'text-center'})  do |f| %>
+
+<div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre, autocomplete: "Nombre del Paciente" %>
+</div>
+
+<div class="field">
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido, autocomplete: "Apellido del Paciente" %>
+</div>
+
+<div class="field">
+  <%= f.label :genero %><br />
+  <%= f.select :genero, options_for_select(['Masculino', 'Femenino'].map{|g| [g, g == 'Masculino']} ) %>
+</div>
+
+<div class="field">
+    <%= f.label :fecha_nacimiento, 'Fecha de Nacimiento' %><br />
+    <%= f.date_field :fecha_nacimiento, autocomplete: "Fecha de Nacimiento" %>
+</div>
+
+<div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
+
+<div class="actions">
+    <%= f.submit "Crear", class: 'btn btn-success m-2' %>
+</div>
+<% end %>
